@@ -7,13 +7,17 @@ function askQuestion {
 	read user_answer
 }
 
-#Initialise the correct answer
+# Initialise the correct answer
 correct_answer=$(ls | wc -l)
 
+# Ask user for their first guess
 askQuestion
 
+# Until the user answer equals the correct answer this loop
+# will continue to run
 while [[ ! $correct_answer -eq $user_answer ]]
 do
+	# Let the user know if their guess is too high or low, then ask again
 	if [[ $user_answer -gt $correct_answer ]]
 	then
 		echo "Answer too high, try again."
@@ -25,5 +29,6 @@ do
 	fi
 done
 
+# Print congratulatory message
 echo "Well done, you guessed correctly! Now get outside and climb a tree."
 
