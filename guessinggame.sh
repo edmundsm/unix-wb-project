@@ -8,7 +8,7 @@ function askQuestion {
 }
 
 # Initialise the correct answer
-correct_answer=$(ls | wc -l)
+correct_answer=$(ls -l | grep "^-" | wc -l)
 
 # Ask user for their first guess
 askQuestion
